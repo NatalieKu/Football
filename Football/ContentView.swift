@@ -8,14 +8,40 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        Text("Hello World")
-    }
-}
+struct Appview :View{
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+    var body: some View {
+    
+        TabView{
+            Main()
+               .tabItem{
+                Image(systemName: "house")
+                Text("Main")
+            }
+            
+            FCList()
+                .tabItem{
+                    Image(systemName: "book.fill")
+                    Text("FCList")
+            }
+            
+             MatchesView()
+                        .tabItem{
+                        Image(systemName: "rosette")
+                        Text("Matches")
+                        }
+            
+ 
+            PlayerList()
+                .tabItem {
+                    Image(systemName: "person.crop.circle.fill.badge.checkmark")
+                    Text("Players")
+            }
+            ContentView()
+                .tabItem {
+                    Image(systemName: "camera.viewfinder")
+                    Text("IG")
+            }
+            }
+        }
 }
